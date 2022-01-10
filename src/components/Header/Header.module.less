@@ -1,0 +1,35 @@
+@import 'styles/app';
+
+.header {
+  margin-bottom: 30px;
+  .title {
+    font-weight: normal;
+    margin-bottom: 0;
+    display: inline-block;
+  }
+  .select {
+    margin-left: 45px;
+    width: 120px;
+  }
+  .search {
+    width: 270px;
+    :global(.ant-input) {
+      &::placeholder {
+        color: @text-color;
+      }
+    }
+  }
+  .menuLink {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: @black;
+    svg {
+      width: 16px;
+      height: 16px;
+      path {
+        fill: @icon-color;
+      }
+    }
+  }
+}

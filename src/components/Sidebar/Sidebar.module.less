@@ -1,0 +1,107 @@
+@import 'styles/app';
+
+.sidebar {
+  position: sticky;
+  height: 100vh;
+  top: 0;
+  display: flex;
+  .navbar {
+    background-color: @primary-color;
+    width: 50px;
+    padding: 25px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: auto;
+    .logo {
+      border-radius: 8px;
+      width: 34px;
+      height: 34px;
+    }
+    &List {
+      padding-inline-start: 0;
+      margin-bottom: 0;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      li {
+        list-style: none;
+        &:not(:last-child) {
+          margin-bottom: 20px;
+        }
+        &:not(.navbarListBottom) + .navbarListBottom {
+          margin-top: auto;
+        }
+        .avatar {
+          border: 1px solid @white;
+          border-radius: 50%;
+        }
+      }
+      .icon {
+        border-radius: 8px;
+        transition: background-color 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+        path {
+          transition: fill 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+          fill: fade(@white, 60%);
+        }
+        &.active {
+          background-color: fade(#232f58, 10%);
+          border-color: transparent;
+          path {
+            fill: @white;
+          }
+        }
+      }
+    }
+  }
+  .menu {
+    width: 184px;
+    background-color: @white;
+    padding-top: 31px;
+    padding-left: 15px;
+    overflow: auto;
+    img {
+      margin-left: 20%;
+    }
+    &List {
+      padding-inline-start: 0;
+      margin-bottom: 0;
+      margin-top: 35px;
+      .text {
+        transition: color 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+        color: #8f9bb3;
+        &.active {
+          color: @primary-color;
+        }
+      }
+      li {
+        list-style: none;
+        margin-bottom: 5px;
+      }
+      .btn {
+        padding: 0;
+        display: inline-flex;
+        align-items: center;
+        &:focus,
+        &:hover {
+          background-color: transparent;
+        }
+      }
+      .icon {
+        path {
+          transition: fill 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+          fill: #8f9bb3;
+        }
+        svg {
+          margin-right: 10px;
+          margin-left: -3px;
+        }
+        &.active {
+          path {
+            fill: @primary-color;
+          }
+        }
+      }
+    }
+  }
+}

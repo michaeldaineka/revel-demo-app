@@ -1,0 +1,23 @@
+@import 'styles/app';
+
+.loginSection {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.infoSection {
+  background-color: rgba(@primary-color, .3);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .title {
+    color: @white;
+    @media (max-width: @screen-lg) {
+      font-size: @heading-4-size;
+    }
+  }
+}
